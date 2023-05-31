@@ -1,0 +1,9 @@
+#!/bin/bash
+
+for image in $(podman images --format "{{.Repository}}:{{.Tag}}" | grep -v '<none>')
+do
+  podman pull $image
+done
+
+
+podman restart $(podman ps -q)

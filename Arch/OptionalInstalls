@@ -1,0 +1,114 @@
+#!/bin/bash
+
+# Sunshine (flatpak)  EA-App Ubisoft-Connect Blizzard-Battlenet (lutris) 
+
+
+# Install Yay from AUR
+sudo pacman -S --needed git base-devel
+
+for x in $@; do
+    if [ "$x" == "-b" ]; then
+        git clone https://aur.archlinux.org/yay.git
+        echo Making and installing Yay
+        cd yay
+        makepkg -sir
+        echo Removing Build Files
+        cd ..
+        rm -rf yay
+        exit
+    fi
+done
+
+git clone https://aur.archlinux.org/yay-bin.git
+echo Installing Yay
+cd yay-bin
+makepkg -sir
+echo Removing Build Files
+cd ..
+rm -rf yay-bin
+
+# Get input of what packages to install
+input="$(whiptail --checklist "Pick Packages" 20 50 8 \
+"Wayland" "" off \
+"Terminal" "" off \
+"Desktop" "" off \
+"Thunar" "" off \
+"Games" "" off \
+"Emulation" "" off \
+"Flatpak" "" off \
+"Docker" "" off \
+"Services" "" off \
+"libs" "" off \
+"AMD" "" off \
+"Intel" "" off \
+"Radeon" "" off \
+"Nvidia" "" off \
+3>&1 1>&2 2>&3)"
+
+
+# Add pack collection to pkgs list to install
+pkgs=""
+
+if [[ $input == *"Wayland"* ]]; then
+    pkgs+=(sway hyprland xdg-desktop-portal-hyprland greetd greetd-gtkgreet-git wofi waybar-hyprland)
+fi
+
+if [[ $input == *"Terminal"* ]]; then
+    pkgs+=(alacritty git base-devel htop neofetch neovim yt-dlp tmux sxiv pipewire lib32-pipewire pipewire-pulse pipewire-alsa)
+fi
+
+if [[ $input == *"Desktop"* ]]; then
+    pkgs+=(firefox discord obsidian vlc vscodium feh gparted keepassxc obs-studio kdeconnect signal-desktop thunderbird )
+fi
+
+if [[ $input == *"Thunar"* ]]; then
+    pkgs+=(thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman gvfs gvfs-mtp gvfs-smb sshfs ark unrar ffmpegthumbnailer)
+fi
+
+if [[ $input == *"Games"* ]]; then
+    pkgs+=(steam steam-native-runtime heroic-games-launcher-beta-bin lutris prismlauncher-bin sidequest-bin mangohud lib32-mangohud gamemode lib32-gamemode gamescope dxvk-bin wine-staging winetricks)
+    echo vm.max_map_count = 2147483642 >> /etc/sysctl.d/80-gamecompatibility.conf
+    sysctl --system
+fi
+
+if [[ $input == *"Emulation"* ]]; then
+    pkgs+=(cemu-bin dolphin-emu yuzu-mainline-bin xemu libretro-citra libretro-duckstation libretro-genesis-plus-gx libretro-mesen libretro-mgba 
+    libretro-mupen64plus-next libretro-pcsx2 libretro-shaders-slang libretro-snes9x retroarch retroarch-assets-glui retroarch-assets-ozone retroarch-assets-xmb)
+fi
+
+if [[ $input == *"Flatpak"* ]]; then
+    pkgs+=(flatpak)
+fi
+
+if [[ $input == *"Docker"* ]]; then
+    pkgs+=(podman)
+fi
+
+if [[ $input == *"Services"* ]]; then
+    pkgs+=(syncthing)
+fi
+
+if [[ $input == *"libs"*]]; then
+    pkgs+=(giflib libpng libldap gnutls mpg123 openal v4l-utils libpulse alsa-plugins alsa-lib libjpeg-turbo libxcomposite libxinerama ncurses opencl-icd-loader libxslt libva gtk3 gst-plugins-base-libs)
+    pkgs+=(lib32-giflib lib32-libpng lib32-libldap lib32-gnutls lib32-mpg123 lib32-openal lib32-v4l-utils lib32-libpulse lib32-alsa-plugins lib32-alsa-lib lib32-libjpeg-turbo lib32-libxcomposite lib32-libxinerama lib32-ncurses lib32-opencl-icd-loader lib32-libxslt lib32-libva lib32-gtk3 lib32-gst-plugins-base-libs)
+fi
+
+if [[ $input == *"AMD"*]]; then
+    pkgs+=(amd-ucode)
+fi
+
+if [[ $input == *"Intel"*]]; then
+    pkgs+=(intel-ucode)
+fi
+
+if [[ $input == *"Radeon"*]]; then
+    pkgs+=(mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon)
+fi
+
+if [[ $input == *"Nvidia"*]]; then
+    pkgs+=(nvidia-utils lib32-nvidia-utils)
+fi
+
+
+# Use yay to install all selected packages
+yay -S --removemake --noupgrademenu --nocleanmenu --nodiffmenu --noeditmenu ${pkgs[*]}

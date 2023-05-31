@@ -1,0 +1,5 @@
+#!/bin/bash
+cat <<EOF >> /etc/pacman.conf
+[multilib]
+Include = /etc/pacman.d/mirrorlist
+EOF
