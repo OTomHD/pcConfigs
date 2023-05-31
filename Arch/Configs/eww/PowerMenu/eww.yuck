@@ -12,11 +12,11 @@
         :halign "bottom"
     (box :orientation "horizontal"
         :halign "left"
-        (button :onclick "notify-send '1' 'Logout'""") ;Logout
-        (button :onclick "notify-send '2' 'Suspend'""") ;Suspend
+        (button :onclick "notify-send '1' 'Logout'""󰀄") ;Logout
+        (button :onclick "notify-send '2' 'Suspend'""⏾") ;Suspend
     )
     (box :orientation "horizontal"
         :halign "left"
-        (button :onclick "notify-send '3' 'Reboot'""") ;Reboot
-        (button :onclick "notify-send '4' 'Shutdown'""") ;Shutdown
+        (button :onclick "notify-send '3' 'Reboot'""󰜉") ;Reboot
+        (button :onclick "notify-send '4' 'Shutdown'""⏻") ;Shutdown
     )))
