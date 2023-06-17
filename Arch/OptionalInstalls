@@ -72,7 +72,7 @@ if [[ $input == *"Games"* ]]; then
 fi
 
 if [[ $input == *"Emulation"* ]]; then
-    pkgs+=(cemu-bin dolphin-emu yuzu-mainline-bin xemu libretro-citra libretro-duckstation libretro-genesis-plus-gx libretro-mesen libretro-mgba 
+    pkgs+=(cemu-bin yuzu-mainline-bin xemu libretro-dolphin libretro-citra libretro-duckstation libretro-genesis-plus-gx libretro-mesen libretro-mgba 
     libretro-mupen64plus-next libretro-pcsx2 libretro-shaders-slang libretro-snes9x retroarch retroarch-assets-glui retroarch-assets-ozone retroarch-assets-xmb)
 fi
 
