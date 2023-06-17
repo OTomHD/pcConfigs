@@ -27,6 +27,7 @@ echo Removing Build Files
 cd ..
 rm -rf yay-bin
 
+yay -S libnewt
 # Get input of what packages to install
 input="$(whiptail --checklist "Pick Packages" 20 50 8 \
 "Wayland" "" off \
