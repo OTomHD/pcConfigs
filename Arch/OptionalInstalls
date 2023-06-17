@@ -67,8 +67,8 @@ fi
 
 if [[ $input == *"Games"* ]]; then
     pkgs+=(steam steam-native-runtime heroic-games-launcher-beta-bin lutris prismlauncher-bin sidequest-bin mangohud lib32-mangohud gamemode lib32-gamemode gamescope dxvk-bin wine-staging winetricks)
-    echo vm.max_map_count = 2147483642 >> /etc/sysctl.d/80-gamecompatibility.conf
-    sysctl --system
+    sudo echo vm.max_map_count = 2147483642 >> /etc/sysctl.d/80-gamecompatibility.conf
+    sudo sysctl --system
 fi
 
 if [[ $input == *"Emulation"* ]]; then
@@ -88,24 +88,24 @@ if [[ $input == *"Services"* ]]; then
     pkgs+=(syncthing)
 fi
 
-if [[ $input == *"libs"*]]; then
+if [[ $input == *"libs"* ]]; then
     pkgs+=(giflib libpng libldap gnutls mpg123 openal v4l-utils libpulse alsa-plugins alsa-lib libjpeg-turbo libxcomposite libxinerama ncurses opencl-icd-loader libxslt libva gtk3 gst-plugins-base-libs)
     pkgs+=(lib32-giflib lib32-libpng lib32-libldap lib32-gnutls lib32-mpg123 lib32-openal lib32-v4l-utils lib32-libpulse lib32-alsa-plugins lib32-alsa-lib lib32-libjpeg-turbo lib32-libxcomposite lib32-libxinerama lib32-ncurses lib32-opencl-icd-loader lib32-libxslt lib32-libva lib32-gtk3 lib32-gst-plugins-base-libs)
 fi
 
-if [[ $input == *"AMD"*]]; then
+if [[ $input == *"AMD"* ]]; then
     pkgs+=(amd-ucode)
 fi
 
-if [[ $input == *"Intel"*]]; then
+if [[ $input == *"Intel"* ]]; then
     pkgs+=(intel-ucode)
 fi
 
-if [[ $input == *"Radeon"*]]; then
+if [[ $input == *"Radeon"* ]]; then
     pkgs+=(mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon)
 fi
 
-if [[ $input == *"Nvidia"*]]; then
+if [[ $input == *"Nvidia"* ]]; then
     pkgs+=(nvidia-utils lib32-nvidia-utils)
 fi
 
