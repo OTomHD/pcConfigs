@@ -1,6 +1,5 @@
 #! /bin/bash
-
-configFile=~/.config/waybar
-
+configFile = ~/.config/eww
 echo "Moving Config files to $configFile"
 cp * $configFile
+rm $configFile/install.sh

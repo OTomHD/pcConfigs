@@ -1,4 +1,4 @@
 #!/bin/bash
-cp *.conf ~/.config/hypr/
-cp *.png ~/.config/hypr/
-cp Shaders -r ~/.config/hypr/Shaders
+configFile = ~/.config.hypr
+cp * $configFile
+rm $configFile/install.sh
