@@ -1,7 +1,7 @@
 #! /bin/bash
-configFile = /etc/greetd
+configFile=/etc/greetd
 echo "Moving Config files to $configFile"
-cp * $configFile
-rm $configFile/install.sh
+sudo cp -r * $configFile
+sudo rm $configFile/install.sh
 
 systemctl enable greetd

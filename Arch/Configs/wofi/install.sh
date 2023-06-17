@@ -1,3 +1,3 @@
 configFile=~/.config/wofi
-cp * $configFile
+cp -r * $configFile
 rm $configFile/install.sh

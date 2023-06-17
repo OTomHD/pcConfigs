@@ -1,5 +1,5 @@
 #! /bin/bash
-configFile = ~/.config/eww
+configFile=~/.config/eww
 echo "Moving Config files to $configFile"
-cp * $configFile
+cp -r * $configFile
 rm $configFile/install.sh
