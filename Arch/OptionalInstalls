@@ -4,20 +4,7 @@
 
 
 # Install Yay from AUR
-sudo pacman -S --needed git base-devel
-
-for x in $@; do
-    if [ "$x" == "-b" ]; then
-        git clone https://aur.archlinux.org/yay.git
-        echo Making and installing Yay
-        cd yay
-        makepkg -sir
-        echo Removing Build Files
-        cd ..
-        rm -rf yay
-        exit
-    fi
-done
+sudo pacman -S --needed git base-devel libnewt
 
 git clone https://aur.archlinux.org/yay-bin.git
 echo Installing Yay
@@ -27,7 +14,6 @@ echo Removing Build Files
 cd ..
 rm -rf yay-bin
 
-yay -S libnewt
 # Get input of what packages to install
 input="$(whiptail --checklist "Pick Packages" 20 50 8 \
 "Wayland" "" off \
