@@ -1,0 +1,3 @@
+#!/bin/bash
+sudo echo vm.max_map_count = 2147483642 >> /etc/sysctl.d/80-gamecompatibility.conf
+sudo sysctl --system

@@ -54,8 +54,6 @@ fi
 
 if [[ $input == *"Games"* ]]; then
     pkgs+=(steam steam-native-runtime heroic-games-launcher-beta-bin lutris prismlauncher-bin sidequest-bin mangohud lib32-mangohud gamemode lib32-gamemode gamescope dxvk-bin wine-staging winetricks)
-    sudo echo vm.max_map_count = 2147483642 >> /etc/sysctl.d/80-gamecompatibility.conf
-    sudo sysctl --system
 fi
 
 if [[ $input == *"Emulation"* ]]; then
