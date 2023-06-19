@@ -91,7 +91,7 @@ if [[ $input == *"Radeon"* ]]; then
 fi
 
 if [[ $input == *"Nvidia"* ]]; then
-    pkgs+=(nvidia-utils lib32-nvidia-utils)
+    pkgs+=(nvidia-dkms nvidia-utils lib32-nvidia-utils)
 fi
 
 
