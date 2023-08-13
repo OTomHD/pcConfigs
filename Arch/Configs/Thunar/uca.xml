@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+<action>
+	<icon>utilities-terminal</icon>
+	<name>Open Terminal Here</name>
+	<submenu></submenu>
+	<unique-id>1691871293335005-1</unique-id>
+	<command>alacritty --working-directory %f</command>
+	<description>Open Alacritty in current Directory</description>
+	<range></range>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+</action>
+<action>
+	<icon>code-context</icon>
+	<name>Open VsCodium Here</name>
+	<submenu></submenu>
+	<unique-id>1691952388198953-1</unique-id>
+	<command>codium --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland --unity-launch %F</command>
+	<description>Opens codium on current directories with wayland</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+	<text-files/>
+</action>
+</actions>
