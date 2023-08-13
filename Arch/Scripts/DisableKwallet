@@ -1,0 +1,1 @@
+echo Enabled=false >> $HOME/.config/kwalletrc
