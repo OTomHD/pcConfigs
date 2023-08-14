@@ -37,7 +37,7 @@ input="$(whiptail --checklist "Pick Packages" 20 50 8 \
 pkgs=""
 
 if [[ $input == *"Wayland"* ]]; then
-    pkgs+=(sway greetd-tuigreet cage hyprland-nvidia xdg-desktop-portal-hyprland greetd greetd-gtkgreet-git wofi waybar-hyprland-nvidia)
+    pkgs+=(sway greetd-tuigreet cage hyprland xdg-desktop-portal-hyprland greetd greetd-gtkgreet-git wofi waybar)
 fi
 
 if [[ $input == *"Terminal"* ]]; then
