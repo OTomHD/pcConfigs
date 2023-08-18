@@ -1,0 +1,17 @@
+cemu-bin
+yuzu-mainline-bin
+xemu-bin
+libretro-dolphin
+libretro-citra
+libretro-duckstation
+libretro-genesis-plus-gx
+libretro-mesen
+libretro-mgba
+libretro-mupen64plus-next
+libretro-pcsx2
+libretro-snes9x
+libretro-shaders-slang
+retroarch
+retroarch-assets-glui
+retroarch-assets-ozone
+retroarch-assets-xmb
