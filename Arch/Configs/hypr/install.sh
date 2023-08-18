@@ -1,5 +1,5 @@
 #!/bin/bash
-configFile=~/.config.hypr
+configFile=~/.config/hypr
 if [ ! -d "$configFile" ]; then
   mkdir -p $configFiles
 fi
