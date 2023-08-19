@@ -6,5 +6,3 @@ makepkg -sir
 echo Removing Build Files
 cd ..
 rm -rf yay-bin
-echo Allowing yay to update 
-yay -S yay-bin#
