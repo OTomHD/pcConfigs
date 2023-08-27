@@ -1,3 +1,4 @@
+#!/bin/python
 import requests as r
 import json
 import wget
