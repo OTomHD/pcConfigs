@@ -1,0 +1,9 @@
+#!/bin/bash
+
+for image in $(docker images --format "{{.Repository}}:{{.Tag}}" | grep -v '<none>')
+do
+  docker pull $image
+done
+
+
+docker restart $(docker ps -q)
