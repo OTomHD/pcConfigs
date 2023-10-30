@@ -18,32 +18,32 @@ if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
 fi
 
 # Shell
-PS1='[\u@\h \W]\$ '
-PS2='-->'
+export PS1='[\u@\h \W]\$ '
+export PS2='-->'
 
 # Applications
-BROWSER=firefox
-EDITOR=nano
+export BROWSER=firefox
+export EDITOR=nano
 # Path
-PATH=/home/tom/.local/bin:$PATH
+export PATH=~/.local/bin:$PATH
 
 # Appication Settings
-MANGOHUD=1
+export MANGOHUD=1
 
 
 # XDG
-XDG_DATA_HOME=$HOME/.local/share
-XDG_CONFIG_HOME=$HOME/.config
-XDG_STATE_HOME=$HOME/.local/state
-XDG_CACHE_HOME=$HOME/.cache
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_STATE_HOME=$HOME/.local/state
+export XDG_CACHE_HOME=$HOME/.cache
 
 
 # Dot Files clean UP
-ANDROID_HOME="$XDG_DATA_HOME"/android
-HISTFILE="${XDG_STATE_HOME}"/bash/history
-CARGO_HOME="$XDG_DATA_HOME"/cargo
-GNUPGHOME="$XDG_DATA_HOME"/gnupg
-GOPATH="$XDG_DATA_HOME"/go
-GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
-GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
-_JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
+export ANDROID_HOME="$XDG_DATA_HOME"/android
+export HISTFILE="${XDG_STATE_HOME}"/bash/history
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
+export GNUPGHOME="$XDG_DATA_HOME"/gnupg
+export GOPATH="$XDG_DATA_HOME"/go
+export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
+export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
+export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
