@@ -71,11 +71,16 @@ class protonDownloader:
 
         if not self.checkVersions():
             return
-            
-        self.createFolder()
-        self.downloadWine()
-        self.installWine()
-        self.setLatestVersion()
+
+        try:
+            self.createFolder()
+            self.downloadWine()
+            self.installWine()
+            self.setLatestVersion()
+        except:
+            print("An error occured")
+
+        
 
 
 
