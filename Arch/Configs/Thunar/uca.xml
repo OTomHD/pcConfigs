@@ -17,11 +17,22 @@
 	<name>Open VsCodium Here</name>
 	<submenu></submenu>
 	<unique-id>1691952388198953-1</unique-id>
-	<command>codium --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland --unity-launch %F</command>
+	<command>code --enable-proposed-api ms-python.python --unity-launch %F</command>
 	<description>Opens codium on current directories with wayland</description>
 	<range>*</range>
 	<patterns>*</patterns>
 	<directories/>
 	<text-files/>
+</action>
+<action>
+	<icon>folder-magenta</icon>
+	<name>Create TempFS</name>
+	<submenu></submenu>
+	<unique-id>1697917988303859-1</unique-id>
+	<command>mkdir /tmp/TEMPfs-&quot;$(date)&quot; &amp;&amp; thunar /tmp/TEMPfs-&quot;$(date)&quot;</command>
+	<description>Creates a directory in /tmp and changes directory into it</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
 </action>
 </actions>
