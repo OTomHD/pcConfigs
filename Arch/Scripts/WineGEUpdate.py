@@ -77,9 +77,14 @@ class protonDownloader:
         self.installWine()
         self.setLatestVersion()
 
-wine = protonDownloader("https://api.github.com/repos/GloriousEggroll/wine-ge-custom/releases/latest", "/home/tom/.local/share/lutris/runners/wine/", "Wine-GE-Latest")
-wine.run()
-    
-proton = protonDownloader("https://api.github.com/repos/GloriousEggroll/proton-ge-custom/releases/latest", "/home/tom/.steam/steam/compatibilitytools.d/", "Proton-GE-Latest")
-proton.run()
 
+
+def main():
+    wine = protonDownloader("https://api.github.com/repos/GloriousEggroll/wine-ge-custom/releases/latest", "/home/tom/.local/share/lutris/runners/wine/", "Wine-GE-Latest")
+    wine.run()
+    
+    proton = protonDownloader("https://api.github.com/repos/GloriousEggroll/proton-ge-custom/releases/latest", "/home/tom/.steam/steam/compatibilitytools.d/", "Proton-GE-Latest")
+    proton.run()
+
+if __name__ == "__main__":
+    main()
