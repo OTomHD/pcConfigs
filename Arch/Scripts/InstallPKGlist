@@ -1,0 +1,64 @@
+#!/bin/bash
+
+# defaults
+pkgListsLocation=../pkgs  # Folder that contains all pkg lists 
+cmd="sudo pacman -S"      # The command to run to install packages
+
+
+Help(){
+    echo "Install pkages from a list in pkgs folder"
+    echo
+    echo "Syntax: InstallPKGlist [-h|y|p|i]"
+    echo "h                   Show this help menu"
+    echo "y                   Use yay instead of pacman to install packages"
+    echo "p path/to/folder    Choose folder location of package list's folder (default is ../pkgs)"
+    echo "i pkgsList          Pkglist file you wish to install"
+    echo
+    echo "Example InstallPKGlist -y -p ../pkgs -i Desktop -i Thunar"
+}
+
+# uses yay if yay command is installed/ found in path exits otherwise
+testyay(){
+    yay -V && cmd="yay -S" || (echo "Yay not found" ; exit )
+}
+
+# uses custom package directory / if directory does not exist then exits
+packageLocation(){
+    if [[ -d $1 ]]; then
+        pkgListsLocation=$1
+    else
+        echo Directory $1 does not exist
+        exit
+    fi
+}
+
+main() {
+    for list in ${pkgLists[@]}; do
+        if [[ -r $pkgListsLocation/$list ]]; then
+            while read -r pkg; do
+                pkgs+=($pkg)
+            done <$pkgListsLocation/$list
+        fi
+    done
+    $cmd ${pkgs[@]}
+}
+
+while getopts ":hypi:" option; do
+   case $option in
+      h) # display Help
+         Help
+         exit;;
+      y) # Use yay
+         testyay;;
+      p) # Choose folder location
+         packageLocation $OPTARG;;
+      i) # Add pkg list to be installed from 
+         pkgLists+=($OPTARG)
+         ;;
+     \?) # Invalid option
+         echo "Error: Invalid option"
+         exit;;
+   esac
+done
+
+main
