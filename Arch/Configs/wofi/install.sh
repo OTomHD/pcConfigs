@@ -1,7 +1,7 @@
 #!/bin/bash
 configFile=~/.config/wofi
 if [ ! -d "$configFile" ]; then
-  mkdir -p $configFiles
+  mkdir -p $configFile
 fi
 
 cp -r * $configFile
