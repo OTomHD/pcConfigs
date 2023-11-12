@@ -85,10 +85,10 @@ class protonDownloader:
 
 
 def main():
-    wine = protonDownloader("https://api.github.com/repos/GloriousEggroll/wine-ge-custom/releases/latest", "~/.config/heroic/tools/wine/", "Wine-GE-Latest")
+    wine = protonDownloader("https://api.github.com/repos/GloriousEggroll/wine-ge-custom/releases/latest", os.path.expanduser("~") + "/.config/heroic/tools/wine/", "Wine-GE-Latest")
     wine.run()
     
-    proton = protonDownloader("https://api.github.com/repos/GloriousEggroll/proton-ge-custom/releases/latest", "~/.steam/steam/compatibilitytools.d/", "Proton-GE-Latest")
+    proton = protonDownloader("https://api.github.com/repos/GloriousEggroll/proton-ge-custom/releases/latest", os.path.expanduser("~") + "/.steam/steam/compatibilitytools.d/", "Proton-GE-Latest")
     proton.run()
 
 if __name__ == "__main__":
