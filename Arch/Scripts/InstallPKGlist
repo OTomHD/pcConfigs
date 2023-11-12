@@ -19,7 +19,7 @@ Help(){
 
 # uses yay if yay command is installed/ found in path exits otherwise
 testyay(){
-    yay -V && cmd="yay -S" || (echo "Yay not found" ; exit )
+    yay -V && cmd="yay -S" || exit
 }
 
 # uses custom package directory / if directory does not exist then exits
