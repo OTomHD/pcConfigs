@@ -49,6 +49,7 @@ class protonDownloader:
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     def downloadWine(self):
         wget.download(self.data.json()["assets"][1]["browser_download_url"], out=self.path)
+        print()
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     def installWine(self):
         filename = self.data.json()["assets"][1]["name"] # Get tar and extract it
