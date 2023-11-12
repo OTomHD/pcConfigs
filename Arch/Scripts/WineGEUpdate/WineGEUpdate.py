@@ -14,6 +14,7 @@ class protonDownloader:
         self.data = r.get(api)
         self.path = path
         self.customWine = name
+        self.versionFile = "{}/{}/.version".format(self.path, self.customWine)
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     def checkStatusCode(self):
         if (self.data.status_code != 200):
@@ -22,9 +23,9 @@ class protonDownloader:
         return True
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     def getCurrentVersion(self):
-        if not(os.path.exists("{}/.{}".format(self.path, self.customWine))):
+        if not(os.path.exists(self.versionFile)):
             return "No Wine"
-        with open("{}/.{}".format(self.path, self.customWine)) as f:
+        with open(self.versionFile) as f:
             line = f.readline()
         return line
 
@@ -62,7 +63,7 @@ class protonDownloader:
         os.rename("{}/{}".format(self.path, foldername), "{}/{}".format(self.path,self.customWine)) # rename folder
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     def setLatestVersion(self):
-        with open("{}/.{}".format(self.path, self.customWine),"w") as f:
+        with open(self.versionFile,"w") as f:
             f.write(self.data.json()["tag_name"])
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     def run(self):
@@ -79,9 +80,6 @@ class protonDownloader:
             self.setLatestVersion()
         except:
             print("An error occured")
-
-        
-
 
 
 def main():
