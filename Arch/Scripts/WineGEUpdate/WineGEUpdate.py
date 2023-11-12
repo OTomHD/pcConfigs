@@ -52,16 +52,17 @@ class protonDownloader:
         print()
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     def installWine(self):
-        filename = self.data.json()["assets"][1]["name"] # Get tar and extract it
-        f = tarfile.open("{}/{}".format(self.path,filename))
+        customWineFolder = "{}/{}".format(self.path, self.customWine)
+        tarFileLocation = "{}/{}".format(self.path,self.data.json()["assets"][1]["name"]) # Get tar and extract it
+        f = tarfile.open(tarFileLocation)
         f.extractall(self.path)
         foldername = f.getnames()[0] # get file name
         f.close()
-        os.remove("{}/{}".format(self.path, filename)) # remove old tar
+        os.remove(tarFileLocation) # remove old tar
 
-        if(os.path.exists("{}/{}".format(self.path, self.customWine)) == True):
-            shutil.rmtree("{}/{}".format(self.path, self.customWine))
-        os.rename("{}/{}".format(self.path, foldername), "{}/{}".format(self.path,self.customWine)) # rename folder
+        if(os.path.exists(customWineFolder) == True):
+            shutil.rmtree(customWineFolder)
+        os.rename("{}/{}".format(self.path, foldername), customWineFolder) # rename folder
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     def setLatestVersion(self):
         with open(self.versionFile,"w") as f:
