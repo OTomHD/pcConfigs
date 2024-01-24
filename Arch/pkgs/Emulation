@@ -1,7 +1,7 @@
 cemu-bin
-yuzu-mainline-bin
+ryujinx-bin
 xemu-bin
-libretro-dolphin
+dolphin-emu
 libretro-citra
 libretro-duckstation
 libretro-genesis-plus-gx
