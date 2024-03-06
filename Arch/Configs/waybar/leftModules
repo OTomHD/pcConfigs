@@ -1,0 +1,70 @@
+{
+    "modules-left": [
+        "hyprland/workspaces",
+        "mpris"
+    ],
+
+    "hyprland/workspaces": {
+        "active-only": false,
+        "all-outputs": false,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "10": "10",
+            //"active": "",
+            "default": ""
+            //"empty": "",
+            //"persistent": "",
+            //"special": "",
+            //"urgent": ""
+        },
+        "persistent-workspaces": {
+        },
+        "show-special": false,
+        "sort-by": "number",
+        "window-rewite": {
+        },
+        "format-window-seperator": "<space>",
+        "ignore-workspaces": {
+        }
+    },
+
+    "mpris": {
+        "player": "playerctld",
+        //"ignored-players": [
+            //"firefox"
+        //],
+        "interval": 5,
+        "format": "{status_icon} {title}-{artist}-{position}/{length} {player_icon}",
+        "tooltip-format": "{player} -> {dynamic}",
+        "on-click": "play-pause",
+        "on-click-middle": "previous track",
+        "on-click-right": "next track",
+        "max-length": 40,
+        "player-icons": {
+
+        },
+        "status-icons": {
+            "playing": "",
+            "paused": "",
+            "stopped": ""
+        },
+        "dynamic-order": [
+            "title",
+            "artist",
+            "album",
+            "position",
+            "length"
+        ],
+        "ellipsis": "...",
+        "dynamic-seperator": "-"
+    }
+}

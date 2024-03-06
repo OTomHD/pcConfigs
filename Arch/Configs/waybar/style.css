@@ -1,200 +1,124 @@
-/* =============================================================================
- *
- * Waybar configuration
- *
- * Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
- *
- * =========================================================================== */
+@define-color text #ffffff;
 
-/* -----------------------------------------------------------------------------
- * Keyframes
- * -------------------------------------------------------------------------- */
+@define-color ws-bg #957dad;
 
-/*
-Arc-Dark Color Scheme
-*/
-@define-color highlight #5294e2 ;
-@define-color base1  #404552 ;
+@define-color clock-bg #7c56b3;
+@define-color user-bg #bf0060;
 
-@keyframes blink-warning {
-    70% {
-        color: white;
-    }
+@define-color pa-bg #458588;
+@define-color tray-bg #d9017a;
 
-    to {
-        color: white;
-        background-color: orange;
-    }
-}
+@define-color ok #689d61;
+@define-color warning #d65d0e;
+@define-color critical #ff6d6a;
 
-@keyframes blink-critical {
-    70% {
-      color: white;
-    }
 
-    to {
-        color: white;
-        background-color: red;
-    }
-}
-
-/* -----------------------------------------------------------------------------
- * Base styles
- * -------------------------------------------------------------------------- */
-
-/* Reset all styles */
 * {
     border: none;
     border-radius: 0;
-    min-height: 0;
-    margin: 1px;
-    padding: 0;
-}
-
-/* The whole bar */
-#waybar {
-    background: transparent;
-    color: #bebebe;
-    background-color: @base1;
     font-family: UbuntuMono;
-    font-size: 14px;
+    font-size: x-large;
+    min-height: 0;
 }
 
-/* Every modules */
-#battery,
-#clock,
-#backlight,
-#cpu,
-#custom-keyboard-layout,
-#memory,
-#mode,
-#custom-weather,
-#network,
-#pulseaudio,
-#temperature,
-#tray,
-#idle_inhibitor,
-#custom-PBPbattery {
-    padding:0.5rem 0.6rem;
-    margin: 1px 0px;
+window#waybar {
+    background-color: transparent;
+    color: @text;
 }
 
-/* -----------------------------------------------------------------------------
- * Modules styles
- * -------------------------------------------------------------------------- */
-
-#battery {
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+tooltip {
+    background-color: rgba(40, 40, 40, 1);
+    border: 5px solid rgba(100, 114, 125, 0.5);
 }
 
-#battery.warning {
-    color: orange;
+
+#workspaces, #mpris,
+#clock, #user,
+#network, #pulseaudio, #battery, #tray{
+    border-radius: 10px;
+    padding: 0.4rem 0.6rem;
+    margin: 1px;
 }
 
-#battery.critical {
-    color: red;
-}
 
-#battery.warning.discharging {
-    animation-name: blink-warning;
-    animation-duration: 3s;
-}
-
-#battery.critical.discharging {
-    animation-name: blink-critical;
-    animation-duration: 2s;
-}
-
-#cpu.warning {
-    color: orange;
-}
-
-#cpu.critical {
-    color: red;
-}
-
-#memory {
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-#memory.warning {
-    color: orange;
- }
-
-#memory.critical {
-    color: red;
-    animation-name: blink-critical;
-    animation-duration: 2s;
-    padding-left:5px;
-    padding-right:5px;
-}
-
-#mode {
-    background: @highlight;
-    border-bottom: 3px transparent;
-    color:white;
-    margin-left: 5px;
-    padding:7;
-}
-
-#network.disconnected {
-    color: orange;
-}
-
-#pulseaudio {
-    padding-top:6px;
-}
-
-#pulseaudio.muted {
-    color: @highlight;
-}
-
-#temperature.critical {
-    color: red;
-}
-
-#window {
-    font-weight: bold;
-}
 
 #workspaces {
-    font-size:13px;
+    background-color: @ws-bg;
+}
+/*#workspaces button{
+}*/
+#workspaces button.active{
+    background-color: @ok;
+}
+#workspaces button.urgent{
+    background-color: @critical;
 }
 
-#workspaces button {
-    border-bottom: 3px solid transparent;
-    margin-bottom: 0px;
-    padding:0px;
+
+/*#mpris{
+
+}*/
+#mpris.playing{
+    background-color: @ok;
+}
+#mpris.paused{
+    background-color: @warning;
+}
+#mpris.stopped{
+    background-color: @critical;
 }
 
-#workspaces button.focused {
-    border-bottom: 3px solid  @highlight;
-    margin-bottom: 1px;
-    padding-left:0;
+
+#clock{
+    background-color: @clock-bg;
 }
 
-#workspaces button.urgent {
-    border-color: #c9545d;
-    color: #c9545d;
+#user{
+    background-color: @user-bg;
 }
 
-#custom-power {
-    margin-left:15px;
-    margin-right:15px;
-    font-size:15px;
+
+#network{
+    background-color: @ok;
+}
+#network.disabled{
+    background-color: @warning;
+}
+#network.disconnected{
+    background-color: @critical;
+}
+/*#network.ethernet, #network.wifi{
+    
+}*/
+
+
+#pulseaudio{
+    background-color: @pa-bg;
+}
+/*#pulseaudio.bluetooth{
+
+}*/
+#pulseaudio.source-muted{
+    color: @warning;
+}
+#pulseaudio.muted{
+    color: @critical;
 }
 
-#custom-launcher {
-    font-size:15px;
-    margin-left:15px;
-    margin-right:10px;
+
+/*#battery{
+
+}*/
+#battery.critical{
+    background-color: @critical;
+}
+#battery.warning{
+    background-color: @warning;
+}
+#battery.ok{
+    background-color: @ok;
 }
 
-#backlight.icon {
-    padding-right:1px;
-    font-size: 13px;
+#tray{
+    background-color: @tray-bg;
 }

@@ -1,0 +1,104 @@
+{
+    "modules-right": [
+        "network",
+        "pulseaudio",
+        "battery",
+        "tray"
+    ],
+
+    "network": {
+        //"interface": "",
+        "interval": 30,
+        "family": "ipv4",
+        "format": "{ifname}",
+        "format-ethernet": "! {ipaddr}",
+        "format-wifi": " {essid}:{signalStrength}%",
+        "format-linked": "",
+        "format-disconnected": "",
+        "format-icons": {
+
+        },
+        "rotate": 0,
+        "max-length": 30,
+        "on-click": "alacritty -e nmtui",
+        "tooltip": true,
+        "tooltip-format": "{ifname}: {ipaddr}/{cidr} /n {bandwidthUpBytes}  {bandwidthDownBytes}",
+        "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr} /n {bandwidthUpBytes}  {bandwidthDownBytes}",
+        "tooltip-format-wifi": "{ifname}: {ipaddr}/{cidr} /n {bandwidthUpBytes}  {bandwidthDownBytes}",
+        "tooltip-format-disconnected": ""
+    },
+
+    "pulseaudio": {
+        "format": "{format_source} {icon} {volume}%",
+        "format-bluetooth": "{format_source} {icon} {volume}% ",
+        "format-muted": "{format_source} ",
+        "format-source": " {volume}%",
+        "format-source-muted": "",
+        "format-icons": {
+            "default": "",
+            "headphone": "",
+            //"speaker": "",
+            "hdmi": "",
+            "headset": "",
+            "hands-free": " ",
+            //"portable": "",
+            "car": "",
+            //"hifi": "",
+            "phone": ""
+        },
+        "rotate": 0,
+        "states": [],
+        "max-length": 20,
+        "scroll-step": 1.0,
+        "on-click": "pavucontrol",
+        //"on-click-middle": "",
+        //"on-click-right": "",
+        //"on-scroll-up": "",
+        //"on-scroll-down": "",
+        "smooth-scrolling-threshold": 0,
+        "tooltip": true,
+        "tooltip-format": "",
+        "max-volume": 100,
+        "ignored-sinks": [],
+        "reverse-scrolling": false,
+        "reverse-mouse-scrolling": false
+    },
+
+    "battery": {
+        //"bat": "",
+        //"adapter": "",
+        "design-capacity": false,
+        "full-at": 100,
+        "interval": 60,
+        "states": {
+            "critical": 5,
+            "warning": 15,
+            "ok": 100
+        },
+        "format": "{icon}  {capacity}%",
+        "format-discharging": "{icon}  {capacity}% ",
+        "format-charging": "{icon}  {capacity}% ",
+        "format-time": "{H}Hrs {M} Mins",
+        "format-icons": ["", "", "", "", ""],
+        "max-length": 30,
+        "rotate": 0,
+        //"on-click": "",
+        //"on-click-middle": "",
+        //"on-click-right": "",
+        //"on-scroll-up": "",
+        //"on-scroll-down": "",
+        "smooth-scrolling-threshold": 0,
+        "tooltip": true,
+        "tooltip-format": "{capacity} {power} /n {time}",
+        "weighted-average": false,
+        "bat-compatibility": false
+    },
+
+    "tray": {
+        "icon-size": 20,
+        "show-passive-items": true,
+        //"smooth-scrolling-threshold": 0,
+        "spacing": 2,
+        "reverse-direction": true
+    }
+}

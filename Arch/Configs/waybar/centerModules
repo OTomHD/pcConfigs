@@ -1,0 +1,52 @@
+{
+    "modules-center": [
+        "clock",
+        "user"
+    ],
+
+    "clock":{
+        "interval": 60,
+        "format": "{:%R} ",
+        "format-alt": "{:%x} ",
+        //"timezone": "",
+        //"timezones":[],
+        //"locale": "",
+        //"max-length": 15,
+        "rotate": 0,
+        "smooth-scrolling-threshold": 0,
+        "tooltip": true,
+        "tooltip-format": "<small>{calendar}</small>",
+        "calendar": {
+            "mode": "year",
+            "mode-mon-col": 2,
+            "weeks-pos": "left",
+            "on-scroll": 0,
+            "on-click-right": "mode",
+            "format": {
+                "months":     "<span color='#ffead3'><b>{}</b></span>",
+                "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            //"on-click": "",
+            //"on-click-middle": "",
+            "on-click-right": "mode"
+            //"on-scroll-up": "",
+            //"on-scroll-down": ""
+        }
+    },
+
+    "user": {
+        "interval": 3600,
+        "format": "{user}:{work_H}Hrs",
+        "avatar": "$HOME/.config/waybar/userIcon",
+        "height": 30,
+        "width": 30,
+        "icon": true,
+        "open-on-click": true,
+        //"open-path": ""
+    }
+}
