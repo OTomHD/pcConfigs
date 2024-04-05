@@ -22,9 +22,9 @@
         "max-length": 30,
         "on-click": "alacritty -e nmtui",
         "tooltip": true,
-        "tooltip-format": "{ifname}: {ipaddr}/{cidr} /n {bandwidthUpBytes}  {bandwidthDownBytes}",
-        "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr} /n {bandwidthUpBytes}  {bandwidthDownBytes}",
-        "tooltip-format-wifi": "{ifname}: {ipaddr}/{cidr} /n {bandwidthUpBytes}  {bandwidthDownBytes}",
+        "tooltip-format": "{ifname}: {ipaddr}/{cidr} &#013; {bandwidthUpBytes}  {bandwidthDownBytes}",
+        "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr} &#013; {bandwidthUpBytes}  {bandwidthDownBytes}",
+        "tooltip-format-wifi": "{ifname}: {ipaddr}/{cidr} &#013; {bandwidthUpBytes}  {bandwidthDownBytes}",
         "tooltip-format-disconnected": ""
     },
 
@@ -89,7 +89,7 @@
         //"on-scroll-down": "",
         "smooth-scrolling-threshold": 0,
         "tooltip": true,
-        "tooltip-format": "{capacity} {power} /n {time}",
+        "tooltip-format": "[{power}W]  [{time}]",
         "weighted-average": false,
         "bat-compatibility": false
     },
