@@ -3,6 +3,7 @@
         "network",
         "pulseaudio",
         "battery",
+        "group/sysmon",
         "tray"
     ],
 
@@ -92,6 +93,66 @@
         "tooltip-format": "[{power}W]  [{time}]",
         "weighted-average": false,
         "bat-compatibility": false
+    },
+
+    "group/sysmon":{
+        "orientation": "horizontal",
+        "modules": ["custom/sysmon-icon", "cpu", "memory", "disk"],
+        "drawer": {
+            "transition-duration": 200,
+            "transition-left-to-right": false,
+            "children-class": "sysmon-drawer",
+        }
+    },
+
+    "custom/sysmon-icon": {
+        "format": "🖳"
+    },
+
+    "cpu": {
+        "interval": 10,
+        "format": " {usage}%[{avg_frequency}GHz]",
+        "max-length": 30,
+        "rotate": 0,
+        //"states": [],
+        //"on-click":,
+        //"on-click-right": ,
+        //"on-scroll-up":,
+        //"on-scroll-down":,
+        //"smooth-scrolling-threshold":,
+        "tooltip": true,
+    },
+
+    "disk": {
+        "interval": 30,
+        "format": " {percentage_free}%",
+        "max-length": 30,
+        //"states": [],
+        //"on-click": "",
+        //"on-click-middle": "",
+        //"on-click-right": "",
+        //"on-scroll-up": "",
+        //"on-scroll-down": "",
+        "path": "/",
+        "smooth-scrolling-threshold": 0,
+        "tooltip": true,
+        "tooltip-format": "free: {free}\nused: {used}\n_________\n{total}"
+    },
+
+    "memory": {
+        "interval": 30,
+        "format": " {percentage}%",
+        "rotate": 0,
+        //"states": [],
+        "max-length": 30,
+        //"on-click":,
+        //"on-click-middle":,
+        //"on-click-right":,
+        //"on-scroll-up":,
+        //"on-scroll-down":,
+        "smooth-scrolling-threshold":0,
+        "tooltip": true,
+        "tooltip-format": "Ram [{used}GiB/{total}GiB]\nSwap [{swapUsed}GiB/{swapTotal}GiB]",
     },
 
     "tray": {

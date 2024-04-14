@@ -34,7 +34,7 @@ tooltip {
 
 #workspaces, #mpris,
 #clock, #user,
-#network, #pulseaudio, #battery, #tray{
+#network, #pulseaudio, #battery, #sysmon, #custom, #cpu, #disk, #memory, #tray{
     border-radius: 10px;
     padding: 0.4rem 0.6rem;
     margin: 1px;
@@ -117,6 +117,13 @@ tooltip {
 }
 #battery.ok{
     background-color: @ok;
+}
+
+#sysmon {
+    background-color: @ws-bg;
+}
+.sysmon-drawer{
+    background-color: purple;
 }
 
 #tray{
