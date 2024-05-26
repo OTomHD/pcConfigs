@@ -1,7 +1,7 @@
 #!/bin/bash
 shopt -s dotglob # Allow globbing to see hidden files
 
-CMD="ln -s"
+CMD="ln -sf"
 BaseDir="/home/tom/Documents/git/pcConfigs"
 
 
@@ -15,13 +15,15 @@ copyFile(){ # $1 = Install from  | $2 = Install to
     
 
     if [[ -f $1 ]]; then # Specific file / directory in input
-        echo "$CMD $(readlink -f "$1") $2/"
+    	do="$SUDO $CMD $(readlink -f "$1") $2/"
+	$do
     fi
 
     if [[ -d $1 ]]; then # All files / directorys within input
         cd "$1" || exit 1
         for file in *; do
-            echo "$CMD $(readlink -f "$file") $2/$file"
+		do="$SUDO $CMD $(readlink -f "$file") $2/$file"
+		$do
         done
         cd $BaseDir || exit 1
     fi
@@ -34,7 +36,8 @@ copyFile "./Home/.local/share/applications" "$HOME/.local/share/applications"
 copyFile "./Home/.bashrc" "$HOME"
 
 # Copy System Configs
+SUDO=sudo
 copyFile "./System/etc" "/etc"
-
+SUDO=""
 
 shopt -u dotglob # Disable globbing to see hidden files
