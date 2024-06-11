@@ -1,3 +1,7 @@
+networkmanager
+bluez
+bluez-utils
+blueman
 syncthing
 docker
 docker-compose
