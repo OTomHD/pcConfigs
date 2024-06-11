@@ -1,7 +1,10 @@
 hyprland
 waybar
 wofi
-dunst
+mako
+pamixer
+playerctl
+brightnessctl
 eww
 xdg-desktop-portal-hyprland
 polkit-kde-agent
