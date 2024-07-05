@@ -1,2 +1,0 @@
-#!/bin/bash
-sudo sed -E -i 's/^.*ParallelDownloads.*$/ParallelDownloads = 6/' /etc/pacman.conf
