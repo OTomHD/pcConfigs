@@ -1,7 +1,6 @@
-xorg-server
-xorg-xkill
-xfce4
-xfce4-wavelan-plugin
-xfce4-pulseaudio-plugin
-xfce4-clipman-plugin
-xfce4-systemload-plugin
+yay xorg-server
+yay xorg-xkill
+yay xfce4
+yay xfce4-wavelan-plugin
+yay xfce4-pulseaudio-plugin
+yay xfce4-systemload-plugin

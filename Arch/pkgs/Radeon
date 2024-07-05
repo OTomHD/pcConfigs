@@ -1,4 +1,4 @@
-mesa
-lib32-mesa
-vulkan-radeon
-lib32-vulkan-radeon
+yay mesa
+yay lib32-mesa
+yay vulkan-radeon
+yay lib32-vulkan-radeon

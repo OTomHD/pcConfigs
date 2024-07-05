@@ -1,9 +1,0 @@
-#!/bin/bash
-sudo pacman -S --needed git base-devel 
-git clone https://aur.archlinux.org/yay-bin.git
-echo Installing Yay
-cd yay-bin
-makepkg -sir
-echo Removing Build Files
-cd ..
-rm -rf yay-bin

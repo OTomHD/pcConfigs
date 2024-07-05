@@ -1,5 +1,5 @@
-pipewire
-lib32-pipewire
-wireplumber
-pipewire-alsa
-pipewire-pulse
+yay pipewire
+yay lib32-pipewire
+yay wireplumber
+yay pipewire-alsa
+yay pipewire-pulse

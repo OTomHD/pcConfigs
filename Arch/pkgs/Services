@@ -1,7 +1,7 @@
-networkmanager
-bluez
-bluez-utils
-blueman
-syncthing
-docker
-docker-compose
+yay networkmanager
+yay bluez
+yay bluez-utils
+yay blueman
+yay syncthing
+yay docker
+yay docker-compose

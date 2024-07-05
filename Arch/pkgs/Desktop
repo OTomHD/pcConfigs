@@ -1,17 +1,27 @@
-ttf-font-awesome
-noto-fonts
-noto-fonts-emoji
-noto-fonts-cjk
-noto-fonts-extra
-firefox
-discord
-obsidian
-vlc
-code
-feh
-gparted
-keepassxc
-obs-studio
-kdeconnect
-signal-desktop
-thunderbird
+flatpak org.mozilla.firefox
+flatpka dev.vencord.Vesktop
+flatpak md.obsidian.Obsidian
+flatpak org.signal.Signal
+flatpak org.mozilla.Thunderbird
+flatpak com.vscodium.codium
+flatpak org.gimp.GIMP
+flatpak org.libreoffice.LibreOffice
+flatpka org.kde.kdenlive
+flatpak com.spotify.Client
+flatpak org.blender.Blender
+flatpak org.kde.krita
+yay ttf-font-awesome
+yay noto-fonts
+yay noto-fonts-emoji
+yay noto-fonts-cjk
+yay noto-fonts-extra
+yay xdg-user-dirs
+yay feh
+yay gparted
+yay keepassxc
+yay obs-studio
+yay kdeconnect
+yay flatpak
+yay flatseal
+yay toolbox
+yay nwg-look

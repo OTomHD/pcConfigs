@@ -1,26 +1,43 @@
 #!/bin/bash
 
 # defaults
-pkgListsLocation=../pkgs  # Folder that contains all pkg lists 
-cmd="sudo pacman -S"      # The command to run to install packages
+pkgListsLocation=$(dirname $(realpath -s "$BASH_SOURCE"))/../pkgs  # Folder that contains all pkg lists 
+yayCmd="yay -S"
+flatpakCmd="flatpak install"
 
+# Installs Yay aur helper
+installYay() {
+    sudo pacman -S --needed git base-devel
+    git clone https://aur.archlinux.org/yay-bin.git
+    echo Installing Yay
+    cd yay-bin
+    makepkg -sir
+    echo Removing Build Files
+    cd ..
+    rm -rf yay-bin
+}
+
+installFlatpak() {
+    sudo pacman -S flatpak
+    flatpak --version || (echo "flatpak not available you may need to restart to enable flatpak" && exit)
+}
+
+enable32BitRepo() {
+echo "[multilib]" | sudo tee -a /etc/pacman.conf
+echo "Include = /etc/pacman.d/mirrorlist" | sudo tee -a /etc/pacman.conf
+}
 
 Help(){
     echo "Install pkages from a list in pkgs folder"
     echo
-    echo "Syntax: InstallPKGlist [-h|y|p|i]"
+    echo "Syntax: InstallPKGlist [-h|p|i]"
     echo "h                   Show this help menu"
-    echo "y                   Use yay instead of pacman to install packages"
     echo "p path/to/folder    Choose folder location of package list's folder (default is ../pkgs)"
     echo "i pkgsList          Pkglist file you wish to install"
     echo
     echo "Example InstallPKGlist -y -p ../pkgs -i Desktop -i Thunar"
 }
 
-# uses yay if yay command is installed/ found in path exits otherwise
-testyay(){
-    yay -V && cmd="yay -S" || exit
-}
 
 # uses custom package directory / if directory does not exist then exits
 packageLocation(){
@@ -35,21 +52,45 @@ packageLocation(){
 main() {
     for list in ${pkgLists[@]}; do
         if [[ -r $pkgListsLocation/$list ]]; then
-            while read -r pkg; do
-                pkgs+=($pkg)
+            while read -r line; do
+		pkg=($line)
+		pkgMgr=${pkg[0]}
+		pkgName=${pkg[1]}
+		if [[ $pkgMgr == "yay" ]]; then
+			yayPkgs+=($pkgName)
+		fi
+
+		if [[ $pkgMgr == "flatpak" ]]; then
+			flatpakPkgs+=($pkgName)
+		fi
             done <$pkgListsLocation/$list
         fi
     done
-    $cmd ${pkgs[@]}
+
+    if [[ -n ${yayPkgs[0]} ]]; then
+	    if [[ ! $(grep -x [^#]multilib]$ /etc/pacman.conf) ]]; then
+		    echo TEEEEEST
+		    enable32BitRepo
+	    fi
+	    if [[ ! $(which yay) ]]; then
+		    installYay
+	    fi
+	    $yayCmd ${yayPkgs[@]}
+    fi
+
+    if [[ -n ${flatpakPkgs[0]} ]]; then
+	    if [[ ! $(which flatpak) ]]; then
+		    installFlatpak
+	    fi
+	    $flatpakCmd ${flatpakPkgs[@]}
+    fi
 }
 
-while getopts ":hypi:" option; do
+while getopts ":hpi:" option; do
    case $option in
       h) # display Help
          Help
          exit;;
-      y) # Use yay
-         testyay;;
       p) # Choose folder location
          packageLocation $OPTARG;;
       i) # Add pkg list to be installed from 

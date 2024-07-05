@@ -1,10 +1,14 @@
-hyprland
-waybar
-wofi
-mako
-pamixer
-playerctl
-brightnessctl
-eww
-xdg-desktop-portal-hyprland
-polkit-kde-agent
+yay hyprland
+yay hyprpaper
+yay waybar
+yay wofi
+yay mako
+yay pamixer
+yay playerctl
+yay brightnessctl
+yay eww
+yay xdg-desktop-portal-hyprland
+yay xdg-desktop-portal-gtk
+yay polkit-kde-agent
+yay qt5-wayland
+yay qt6-wayland

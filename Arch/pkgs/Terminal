@@ -1,10 +1,11 @@
-alacritty
-git
-base-devel
-btop
-neofetch
-neovim
-yt-dlp
-tmux
-sxiv
-mpv
+yay alacritty
+yay git
+yay lazygit
+yay base-devel
+yay btop
+yay bat
+yay neofetch
+yay neovim
+yay yt-dlp
+yay tmux
+yay mpv
