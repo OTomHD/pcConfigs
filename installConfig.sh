@@ -1,43 +1,47 @@
 #!/bin/bash
-shopt -s dotglob # Allow globbing to see hidden files
 
-CMD="ln -sf"
-BaseDir="/home/tom/Documents/git/pcConfigs"
+CMD="ln -s"
+BASE_DIR=$(dirname $(realpath -s "$BASH_SOURCE"))
+cd $BASE_DIR
 
-
-createFolderStructure(){
-    mkdir -p "$HOME"/.config
-    mkdir -p "$HOME"/.local/share/applications
-}
-
-
-copyFile(){ # $1 = Install from  | $2 = Install to
-    
-
-    if [[ -f $1 ]]; then # Specific file / directory in input
-    	do="$SUDO $CMD $(readlink -f "$1") $2/"
-	$do
+installConfig() {
+    if [[ ! -d "${2%/*}" ]]; then
+	    $SUDO mkdir -p "${2%/*}"
     fi
 
-    if [[ -d $1 ]]; then # All files / directorys within input
-        cd "$1" || exit 1
-        for file in *; do
-		do="$SUDO $CMD $(readlink -f "$file") $2/$file"
-		$do
-        done
-        cd $BaseDir || exit 1
+    if [[ ! -e "$2" ]]; then
+	    echo "Installing $2 ..."
+	    $SUDO $CMD "$(realpath $1)" "$2"
     fi
-    
 }
 
-# Copy User Configs
-copyFile "./Home/.config" "$HOME/.config"
-copyFile "./Home/.local/share/applications" "$HOME/.local/share/applications"
-copyFile "./Home/.bashrc" "$HOME"
+archConfig() {
+	# Root Home DIR configs
+   installConfig Home/.bashrc $HOME/.bashrc
+   installConfig Home/.profile $HOME/.profile
 
-# Copy System Configs
-SUDO=sudo
-copyFile "./System/etc" "/etc"
-SUDO=""
+	# Config Folder 
+   installConfig Home/.config/alacritty $HOME/.config/alacritty
+   installConfig Home/.config/btop $HOME/.config/btop
+   installConfig Home/.config/compatman $HOME/.config/compatman
+   installConfig Home/.config/eww $HOME/.config/eww
+   installConfig Home/.config/gtk-2.0 $HOME/.config/gtk-2.0
+   installConfig Home/.config/gtk-3.0 $HOME/.config/gtk-3.0
+   installConfig Home/.config/hypr $HOME/.config/hypr
+   installConfig Home/.config/obs-studio $HOME/.config/obs-studio
+   installConfig Home/.config/pipewire $HOME/.config/pipewire
+   installConfig Home/.config/Thunar $HOME/.config/Thunar
+   installConfig Home/.config/waybar $HOME/.config/waybar
+   installConfig Home/.config/wofi $HOME/.config/wofi
+   installConfig Home/.config/xfce4 $HOME/.config/xfce4
 
-shopt -u dotglob # Disable globbing to see hidden files
+	# Custom .desktop files for applications
+   installConfig Home/.local/share/applications/com.obsproject.Studio.desktop $HOME/.local/share/applications/com.obsproject.Studio.desktop
+
+	# System / sudo required configs
+   SUDO=sudo
+   installConfig System/etc/greetd /etc/greetd
+   installConfig System/etc/sysctl.d/80-gamecompatibility.conf /etc/sysctl.d/80-gamecompatibility.conf
+}
+
+archConfig
