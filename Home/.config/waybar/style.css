@@ -17,7 +17,7 @@
     border: none;
     border-radius: 0;
     font-family: NotoSansMono;
-    font-size: x-large;
+    font-size: medium;
     min-height: 0;
 }
 
@@ -36,7 +36,7 @@ tooltip {
 #clock, #user,
 #network, #pulseaudio, #battery, #sysmon, #custom, #cpu, #disk, #memory, #tray{
     border-radius: 10px;
-    padding: 0.4rem 0.6rem;
+    padding: 0.2rem 0.4rem;
     margin: 1px;
 }
 
