@@ -3,3 +3,4 @@ yay lib32-pipewire
 yay wireplumber
 yay pipewire-alsa
 yay pipewire-pulse
+yay noise-suppression-for-voice
