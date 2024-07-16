@@ -125,7 +125,7 @@
 
     "disk": {
         "interval": 30,
-        "format": " {percentage_free}%",
+        "format": " {percentage_used}%",
         "max-length": 30,
         //"states": [],
         //"on-click": "",
