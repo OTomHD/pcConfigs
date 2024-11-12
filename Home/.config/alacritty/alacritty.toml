@@ -1,6 +1,3 @@
-import = [
-"~/.config/alacritty/arc-dark.toml",
-]
 
 [env]
 
@@ -14,3 +11,8 @@ multiplier = 1
 
 [font]
 size = 11
+
+[general]
+import = [
+"~/.config/alacritty/arc-dark.toml",
+]
