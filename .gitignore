@@ -5,11 +5,14 @@ temp
 dist
 
 # XFCE config files to ignore
+Home/.config/Thunar/accels.scm
+
 Home/.config/xfce4/desktop
 Home/.config/xfce4/xfconf/xfce-perchannel-xml/displays.xml
 Home/.config/xfce4/xfconf/xfce-perchannel-xml/keyboard-layout.xml
-Home/.config/xfce4/xfconf/xfce-perchannel-xml/keboards.xml
+Home/.config/xfce4/xfconf/xfce-perchannel-xml/keyboards.xml
 Home/.config/xfce4/xfconf/xfce-perchannel-xml/pointers.xml
 Home/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
 Home/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-settings-editor.xml
-Home/.config/xfce4/xfconf/xfce-perchammel-xml/xfce4-settings-manager.xml
+Home/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-settings-manager.xml
+Home/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml
