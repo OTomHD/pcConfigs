@@ -1,6 +1,6 @@
 Interface=wlp2s0
 Autohide=true
-AutohideMissing=false
+AutohideMissing=true
 SignalColors=true
 ShowIcon=true
 ShowBar=false
