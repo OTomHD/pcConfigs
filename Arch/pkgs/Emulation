@@ -1,5 +1,5 @@
 flatpak info.cemu.Cemu
-flatpak org.ryujinx.Ryujinx
+flatpak io.github.ryubing.Ryujinx
 flatpak app.xemu.xemu
 flatpak org.DolphinEmu.dolphin-emu
 flatpak io.github.lime3ds.Lime3DS
