@@ -1,8 +1,0 @@
-Interface=wlp2s0
-Autohide=true
-AutohideMissing=true
-SignalColors=true
-ShowIcon=true
-ShowBar=false
-Command=alacritty -e nmtui
-
