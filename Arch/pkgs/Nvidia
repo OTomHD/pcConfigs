@@ -1,3 +1,4 @@
 yay nvidia-dkms
 yay nvidia-utils
+yay libva-nvidia-driver
 yay lib32-nvidia-utils
