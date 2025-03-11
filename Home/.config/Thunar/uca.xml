@@ -5,8 +5,8 @@
 	<name>Open Terminal Here</name>
 	<submenu></submenu>
 	<unique-id>1691871293335005-1</unique-id>
-	<command>alacritty --working-directory %f</command>
-	<description>Open Alacritty in current Directory</description>
+	<command>exo-open --launch TerminalEmulator</command>
+	<description>Open Terminal in current Directory</description>
 	<range></range>
 	<patterns>*</patterns>
 	<startup-notify/>
