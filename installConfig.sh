@@ -6,12 +6,21 @@ cd $BASE_DIR
 
 installConfig() {
     if [[ ! -d "${2%/*}" ]]; then
+	    echo "Making directory ${2%/*}"
 	    $SUDO mkdir -p "${2%/*}"
     fi
 
     if [[ ! -e "$2" ]]; then
 	    echo "Installing $2 ..."
 	    $SUDO $CMD "$(realpath $1)" "$2"
+    else
+	    echo "Overwrite $2? [y/n]"
+	    read -r input
+	    if [[ $input == "y" ]]; then
+		echo "Overwriting $2..."
+		$SUDO rm -rf "$2"
+		$SUDO $CMD "$(realpath $1)" "$2"
+	    fi
     fi
 }
 
@@ -21,9 +30,7 @@ archConfig() {
    installConfig Home/.profile $HOME/.profile
 
 	# Config Folder 
-   installConfig Home/.config/alacritty $HOME/.config/alacritty
    installConfig Home/.config/btop $HOME/.config/btop
-   installConfig Home/.config/compatman $HOME/.config/compatman
    installConfig Home/.config/eww $HOME/.config/eww
    installConfig Home/.config/gtk-2.0 $HOME/.config/gtk-2.0
    installConfig Home/.config/gtk-3.0 $HOME/.config/gtk-3.0
@@ -36,12 +43,12 @@ archConfig() {
    installConfig Home/.config/xfce4 $HOME/.config/xfce4
 
 	# Custom .desktop files for applications
-   installConfig Home/.local/share/applications/com.obsproject.Studio.desktop $HOME/.local/share/applications/com.obsproject.Studio.desktop
+   installConfig Home/.local/share/applications/ $HOME/.local/share/applications
 
 	# System / sudo required configs
    SUDO=sudo
-   installConfig System/etc/greetd /etc/greetd
-   installConfig System/etc/sysctl.d/80-gamecompatibility.conf /etc/sysctl.d/80-gamecompatibility.conf
+   installConfig System/etc/sysctl.d/ /etc/sysctl.d
+   installConfig System/etc/modprobe.d/ /etc/modprobe.d
 }
 
 archConfig
