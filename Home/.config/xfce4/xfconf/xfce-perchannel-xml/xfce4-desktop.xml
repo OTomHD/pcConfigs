@@ -78,6 +78,11 @@
           <property name="last-image" type="string" value="/home/tom/.config/xfce4/bg.png"/>
         </property>
       </property>
+      <property name="monitorVG248" type="empty">
+        <property name="workspace0" type="empty">
+          <property name="last-image" type="string" value="/usr/share/backgrounds/xfce/xfce-leaves.svg"/>
+        </property>
+      </property>
     </property>
     <property name="single-workspace-mode" type="bool" value="true"/>
     <property name="single-workspace-number" type="int" value="0"/>
@@ -98,5 +103,9 @@
   <property name="last" type="empty">
     <property name="window-width" type="int" value="663"/>
     <property name="window-height" type="int" value="546"/>
+  </property>
+  <property name="last-settings-migration-version" type="uint" value="1"/>
+  <property name="desktop-menu" type="empty">
+    <property name="show-delete" type="bool" value="false"/>
   </property>
 </channel>
