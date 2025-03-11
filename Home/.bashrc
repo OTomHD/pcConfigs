@@ -9,6 +9,13 @@ alias rmd='rm -r'
 alias htop='btop'
 alias top='btop'
 
+alias userctl='systemctl --user'
+
+alias update='yay -Syu; flatpak update'
+
+alias d='docker'
+alias dc='docker compose'
+
 # Enviroment Variables
 
 if [ "$XDG_CURRENT_DESKTOP" = "KDE" ]; then
@@ -30,3 +37,6 @@ export EDITOR=nvim
 
 # Appication Settings
 export MANGOHUD=1
+
+# QT Themeing
+export QT_QPA_PLATFORMTHEME=gtk3
