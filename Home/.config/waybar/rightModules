@@ -21,7 +21,7 @@
         },
         "rotate": 0,
         "max-length": 30,
-        "on-click": "alacritty -e nmtui",
+        "on-click": "exo-open --launch TerminalEmulator -e nmtui",
         "tooltip": true,
         "tooltip-format": "{ifname}: {ipaddr}/{cidr} &#013; {bandwidthUpBytes}  {bandwidthDownBytes}",
         "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr} &#013; {bandwidthUpBytes}  {bandwidthDownBytes}",
