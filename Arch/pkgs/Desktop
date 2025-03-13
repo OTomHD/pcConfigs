@@ -1,4 +1,4 @@
-flatpak org.mozilla.firefox
+flatpak io.gitlab.librewolf-community
 flatpak dev.vencord.Vesktop
 flatpak com.teamspeak.TeamSpeak3
 flatpak md.obsidian.Obsidian
@@ -6,13 +6,9 @@ flatpak com.obsproject.Studio
 flatpak com.obsproject.Studio.Plugin.BackgroundRemoval
 flatpak org.signal.Signal
 flatpak org.mozilla.Thunderbird
-flatpak com.visualstudio.code
-flatpak org.gimp.GIMP
+yay code
 flatpak org.libreoffice.LibreOffice
-flatpka org.kde.kdenlive
 flatpak com.spotify.Client
-flatpak org.blender.Blender
-flatpak org.kde.krita
 flatpak com.github.tchx84.Flatseal
 yay ttf-font-awesome
 yay noto-fonts
@@ -25,9 +21,9 @@ yay posy-cursors
 yay arc-gtk-theme
 yay feh
 yay gparted
-yay keepassxc
+flatpak org.keepassxc.KeePassXC
 yay kdeconnect
 yay flatpak
 yay toolbox
 yay nwg-look
-yay pavucontrol
+flatpak org.pulseaudio.pavucontrol

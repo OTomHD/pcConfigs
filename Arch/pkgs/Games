@@ -1,4 +1,3 @@
-flatpak com.valvesoftware.Steam
+yay steam
 flatpak com.heroicgameslauncher.hgl
-flatpak net.lutris.Lutris
 flatpak org.prismlauncher.PrismLauncher
