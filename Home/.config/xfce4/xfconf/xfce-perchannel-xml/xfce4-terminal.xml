@@ -31,4 +31,5 @@
   <property name="misc-middle-click-opens-uri" type="bool" value="true"/>
   <property name="dropdown-keep-open-default" type="bool" value="true"/>
   <property name="dropdown-toggle-focus" type="bool" value="true"/>
+  <property name="misc-confirm-close" type="bool" value="false"/>
 </channel>
