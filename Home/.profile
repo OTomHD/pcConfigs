@@ -19,3 +19,4 @@ export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 export GIT_CONFIG_GLOBAL=$XDG_CONFIG_HOME/git/config
 export XAUTHORITY="$XDG_RUNTIME_DIR"/XAUTHORITY
 export ICEAUTHORITY="$XDG_CACHE_HOME"/ICEauthority
+export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv

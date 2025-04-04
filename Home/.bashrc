@@ -40,3 +40,6 @@ export MANGOHUD=1
 
 # QT Themeing
 export QT_QPA_PLATFORMTHEME=gtk3
+
+# Wine Settings
+export WINEPREFIX=~/.local/winePrefix
