@@ -10,6 +10,7 @@ yay code
 flatpak org.libreoffice.LibreOffice
 flatpak com.spotify.Client
 flatpak com.github.tchx84.Flatseal
+yay xfce4-terminal
 yay ttf-font-awesome
 yay noto-fonts
 yay noto-fonts-emoji
