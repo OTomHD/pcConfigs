@@ -43,7 +43,25 @@ export EDITOR=nvim
 # Appication Settings
 export MANGOHUD=1
 
+# Font
+gsettings set org.gnome.desktop.interface font-name 'Fira Sans'
+
+# XCursor Themeing
+export XCURSOR_THEME=posy-black
+gsettings set org.gnome.desktop.interface cursor-theme 'posy-black'
+export XCURSOR_SIZE=24
+gsettings set org.gnome.desktop.interface cursor-size 24
+
+
+
+# GTK Themeing
+export GTK_THEME=adw-gtk3-dark
+gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'
+gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
+
+
 # QT Themeing
+export QT_QPA_PLATFORM="wayland;xcb"
 export QT_QPA_PLATFORMTHEME=gtk3
 
 # Wine Settings
