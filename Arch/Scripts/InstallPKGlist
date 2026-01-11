@@ -25,6 +25,7 @@ installFlatpak() {
 enable32BitRepo() {
 echo "[multilib]" | sudo tee -a /etc/pacman.conf
 echo "Include = /etc/pacman.d/mirrorlist" | sudo tee -a /etc/pacman.conf
+sudo pacman -Syy
 }
 
 Help(){
@@ -69,7 +70,6 @@ main() {
 
     if [[ -n ${yayPkgs[0]} ]]; then
 	    if [[ ! $(grep -x [^#]multilib]$ /etc/pacman.conf) ]]; then
-		    echo TEEEEEST
 		    enable32BitRepo
 	    fi
 	    if [[ ! $(command -v yay >/dev/null 2>&1) ]]; then
