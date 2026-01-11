@@ -72,14 +72,14 @@ main() {
 		    echo TEEEEEST
 		    enable32BitRepo
 	    fi
-	    if [[ ! $(which yay) ]]; then
+	    if [[ ! $(command -v yay >/dev/null 2>&1) ]]; then
 		    installYay
 	    fi
 	    $yayCmd ${yayPkgs[@]}
     fi
 
     if [[ -n ${flatpakPkgs[0]} ]]; then
-	    if [[ ! $(which flatpak) ]]; then
+	    if [[ ! $(command -v flatpak >/dev/null 2>&1) ]]; then
 		    installFlatpak
 	    fi
 	    $flatpakCmd ${flatpakPkgs[@]}
