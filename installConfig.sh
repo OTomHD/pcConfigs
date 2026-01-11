@@ -31,16 +31,16 @@ archConfig() {
 
 	# Config Folder 
    installConfig Home/.config/btop $HOME/.config/btop
-   installConfig Home/.config/eww $HOME/.config/eww
-   installConfig Home/.config/gtk-2.0 $HOME/.config/gtk-2.0
-   installConfig Home/.config/gtk-3.0 $HOME/.config/gtk-3.0
+   installConfig Home/.config/dunst $HOME/.config/dunst
    installConfig Home/.config/hypr $HOME/.config/hypr
+   installConfig Home/.config/kitty $HOME/.config/kitty
+   installConfig Home/.config/matugen $HOME/.config/matugen
    installConfig Home/.config/obs-studio $HOME/.config/obs-studio
    installConfig Home/.config/pipewire $HOME/.config/pipewire
+   installConfig Home/.config/rofi $HOME/.config/rofi
    installConfig Home/.config/Thunar $HOME/.config/Thunar
    installConfig Home/.config/waybar $HOME/.config/waybar
    installConfig Home/.config/wofi $HOME/.config/wofi
-   installConfig Home/.config/xfce4 $HOME/.config/xfce4
 
 	# Custom .desktop files for applications
    installConfig Home/.local/share/applications/ $HOME/.local/share/applications
