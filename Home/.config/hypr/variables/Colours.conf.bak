@@ -1,11 +1,11 @@
-$inactiveBorder   = rgb(ff0000) rgb(000000) 45deg
-$activeBorder     = rgb(ff00ff) rgb(00ff00) 45deg
+$inactiveBorder   = rgb(000000) rgb(000000) 45deg
+$activeBorder     = rgb(29003c) rgb(29003c) 45deg
 
 $groupBorder       = rgb(000000) rgb(000000) 0deg
 $groupBorderActive = rgb(000000) rgb(000000) 0deg
 
 $inactiveBorderLocked = rgb(ff0000) rgb(ff0000) 0deg
-$activeBorderLocked   = rgb(ff00ff) rgb(00ff00) 0deg
+$activeBorderLocked   = rgb(0000ff) rgb(0000ff) 0deg
 
 $shadow = rgba(1a1a1aee)
 
