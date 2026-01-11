@@ -3,8 +3,6 @@ yay ufw
 yay bluez
 yay bluez-utils
 yay blueman
-yay docker
-yay docker-compose
-yay podman
-yay podman-compose
 yay fuse2
+yay kdeconnect
+yay tailscale

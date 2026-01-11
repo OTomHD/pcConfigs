@@ -3,11 +3,10 @@ yay lazygit
 yay base-devel
 yay btop
 yay bat
-yay neofetch
-yay neovim
 yay yt-dlp
 yay tmux
 yay mpv
-yay slop
 yay man-db
 yay man-pages
+yay toolbox
+yay neovim

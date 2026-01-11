@@ -13,8 +13,4 @@ yay xfce4-terminal
 yay xdg-user-dirs
 yay feh
 yay gparted
-flatpak org.keepassxc.KeePassXC
-yay kdeconnect
-yay flatpak
-yay toolbox
 flatpak org.pulseaudio.pavucontrol
