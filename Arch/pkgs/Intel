@@ -3,4 +3,3 @@ yay lib32-mesa
 yay vulkan-intel
 yay lib32-vulkan-intel
 yay intel-media-driver
-yay intel-gpu-tools
