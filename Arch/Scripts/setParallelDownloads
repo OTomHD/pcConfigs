@@ -1,7 +1,0 @@
-#!/bin/bash
-count=$1
-if [[ -z $1 ]]; then
-	count=6
-fi
-
-sudo sed -E -i "s/^.*ParallelDownloads.*$/ParallelDownloads = $count/" /etc/pacman.conf
